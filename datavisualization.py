@@ -55,7 +55,7 @@ def data_vis():
         title='Top 10 Products by Occurrences in Transactions'
     )
 
-    fig.write_image("pie_chart.png")   
+    fig.write_image("pie_chart.jpg")   
     
     return df_article, df_cust, df_trans
     
