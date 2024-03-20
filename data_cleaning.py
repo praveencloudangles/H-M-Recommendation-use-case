@@ -18,6 +18,6 @@ def data_cleaning():
     merged_df.drop_duplicates(inplace=True)
     print("merged_df------------", merged_df)
             
-    return df
+    return merged_df
 
 data_cleaning()
