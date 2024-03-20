@@ -31,7 +31,7 @@ pipeline{
     post{
        
         always {
-            archiveArtifacts artifacts: 'Retail_suggetion.csv', onlyIfSuccessful: true
+            archiveArtifacts artifacts: 'final.csv', onlyIfSuccessful: true
         }
             }
 }
