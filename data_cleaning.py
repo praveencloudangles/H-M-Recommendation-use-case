@@ -16,20 +16,8 @@ def data_cleaning():
     merged_df = pd.merge(df_articles, df_transaction, on='article_id', how='left')
     merged_df.dropna(inplace=True)
     merged_df.drop_duplicates(inplace=True)
-    top_n_unique_values = merged_df['prod_name'].value_counts().head(120).index.tolist()
-
-    filtered_df = merged_df[merged_df['prod_name'].isin(top_n_unique_values)]
-
-    pivot_table = pd.pivot_table(filtered_df, index=['customer_id', 'article_id','product_type_name', 'product_group_name','t_dat'], columns='prod_name', values='price', aggfunc=lambda x: True, fill_value=False)
-
-    pivot_table.reset_index(inplace=True)
-    
-    columns_to_drop = ['customer_id', 'article_id', 'product_type_name', 'product_group_name', 't_dat']
-
-    for column in columns_to_drop:
-        if column in pivot_table.columns:
-            pivot_table.drop(columns=[column], inplace=True)
+    print("merged_df------------", merged_df)
             
-    return pivot_table
+    return df
 
 data_cleaning()
