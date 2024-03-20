@@ -8,7 +8,7 @@ def feat_eng():
     
     df = final_df.iloc[:50000]
     
-    df.to_csv("Retail_suggetion.csv")
+    df.to_csv("Retail_suggetion.csv", index=False)
     
     return final_df
     
