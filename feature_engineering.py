@@ -25,7 +25,7 @@ df_modified = df.apply(add_true_randomly, axis=1)
 print(df_modified)
 df_modified.drop(columns=df_modified.columns[0], axis=1, inplace=True)
 
-df_updated=df_modified.iloc[:12]
+df_updated=df_modified.iloc[:101]
 
 
 df_updated.to_csv("final.csv", index=False)
